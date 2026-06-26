@@ -51,6 +51,7 @@ online-voting-system/
 │
 └── pom.xml                          # Maven Dependencies & Build Blueprint
 ```
+---
 
 ## 🛠️ Technology Stack Matrix
 
