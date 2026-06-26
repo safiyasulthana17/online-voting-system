@@ -82,14 +82,13 @@ online-voting-system/
 * Evaluation algorithms gather active entity data lists from the database, sort the results by count, and instantly display the winner on the public dashboard.
 
 ---
+## ⚙️ Local Development Setup
 
-# ⚙️ Local Development Machine Configuration
+Follow these steps to run the project on your local machine.
 
-To run this project on your local machine, follow the steps below.
+### 1. Create the Database
 
-## 1. Database Creation
-
-Open **MySQL Workbench** (or any MySQL SQL client) and create the database:
+Open **MySQL Workbench** (or any MySQL client) and create the database:
 
 ```sql
 CREATE DATABASE online_voting_system;
@@ -97,15 +96,15 @@ CREATE DATABASE online_voting_system;
 
 ---
 
-## 2. Configure Environment Properties
+### 2. Configure Database Properties
 
 Open the following file:
 
-```text
+```
 src/main/resources/application.properties
 ```
 
-Update it with your MySQL database credentials:
+Update it with your MySQL credentials:
 
 ```properties
 server.port=9091
@@ -120,58 +119,79 @@ spring.jpa.show-sql=true
 
 ---
 
-## 3. Build & Run the Application
+### 3. Import the Project
 
-Open a terminal in the project's root directory and execute:
+This project was developed using **Eclipse IDE**. However, you can import and run it using **any Java-based IDE**, such as:
+
+- Eclipse IDE
+- IntelliJ IDEA
+- Spring Tool Suite (STS)
+- NetBeans
+
+Import the project as an **Existing Maven Project**.
+
+---
+
+### 4. Run the Application
+
+You can start the application using one of the following methods:
+
+#### Using Eclipse
+
+- Right-click the project.
+- Select **Run As → Spring Boot App** (or **Java Application** if applicable).
+
+#### Using Maven
+
+Open a terminal in the project root directory and run:
 
 ```bash
 mvn spring-boot:run
 ```
 
-The application will start on **Port 9091**.
+---
 
-Open your browser and visit:
+### 5. Access the Application
 
-**👉 http://localhost:9091/register**
+Once the application starts successfully, open your browser and visit:
+
+👉 **http://localhost:9091/register**
+
+to begin registration and use the Online Voting System.
 
 ---
 
 # 📈 Practical Applications & Uses
 
 ### 🏫 Educational Institutions
-- Conduct **Student Council Elections**
-- Elect **Class Representatives (CRs)**
-- Organize **College & University Elections**
+
+- Conduct student council elections.
+- Elect Class Representatives (CRs).
+- Organize university and college elections securely.
 
 ### 🏢 Corporate Organizations
-- Conduct employee voting for internal initiatives
-- Collect feedback through secure polling
-- Elect employee committee representatives
+
+- Employee committee elections.
+- Internal voting for company initiatives.
+- Collect employee opinions and feedback.
 
 ### 🏘️ Community Associations
-- Organize transparent elections for:
-  - Housing Society Boards
-  - Local Clubs
-  - Resident Welfare Associations (RWAs)
+
+- Housing society elections.
+- Apartment association voting.
+- Club and organization board member elections.
 
 ### 🗳️ Local Governance
-- Conduct secure elections for:
-  - Panchayat Elections
-  - Village Committees
-  - Small Civic Bodies
-  - Community Decision-Making
 
----
+- Panchayat elections.
+- Small-scale civic body elections.
+- Community decision-making with transparency.
 
-## 🚀 Access the Application
+### 🌐 Online Polling & Surveys
 
-Once the server is running, open:
-
-```
-http://localhost:9091/register
-```
-
-to begin registration and use the Online Voting System.
+- Create secure online polls.
+- Conduct opinion surveys.
+- Organize event-based voting and competitions.
 
 ---
 
