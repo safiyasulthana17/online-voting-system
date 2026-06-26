@@ -50,3 +50,124 @@ online-voting-system/
 │   └── application.properties       # Core Environmental Configuration
 │
 └── pom.xml                          # Maven Dependencies & Build Blueprint
+```
+
+## 🛠️ Technology Stack Matrix
+
+| Layer | Technologies | Description |
+| :--- | :--- | :--- |
+| **Frontend** | HTML5, CSS3, Bootstrap 5, JavaScript | Responsive layout Engine |
+| **Backend Framework** | Java 21, Spring Boot 3.2.3 | Core Controller Runtime API Engine |
+| **Data Layers** | Spring Data JPA, Hibernate 6 | Object-Relational Mapping Framework |
+| **Database Engine** | MySQL Server 8.0, HikariCP Connection Pool | Secure, structured Relational storage |
+| **Template Engine** | Thymeleaf 3 | Reactive Server-Side HTML Rendering |
+
+---
+
+## 🧮 Core Business System Algorithms
+
+### 1️⃣ Identity Security Authentication Flow
+* Voters input their unique email address credentials.
+* Backend systems check for pre-existing records via the database access layer (`UserRepository`).
+* Active sessions lock verified security identifiers into the container environment (`HttpSession`).
+
+### 2️⃣ "One Person – One Vote" Constraint
+* Each `User` model tracks a unique target collection tracking reference: `Set<Long> votedElectionIds`.
+* When attempting to post a vote, the tracking logic checks if the user's ID is already in the election set.
+* If a record exists, execution blocks instantly, throwing an error and preventing duplicate voting.
+
+### 3️⃣ Real-Time Vote Compilation Logic
+* Votes trigger atomic counter field shifts directly inside the corresponding database records.
+* Evaluation algorithms gather active entity data lists from the database, sort the results by count, and instantly display the winner on the public dashboard.
+
+---
+
+# ⚙️ Local Development Machine Configuration
+
+To run this project on your local machine, follow the steps below.
+
+## 1. Database Creation
+
+Open **MySQL Workbench** (or any MySQL SQL client) and create the database:
+
+```sql
+CREATE DATABASE online_voting_system;
+```
+
+---
+
+## 2. Configure Environment Properties
+
+Open the following file:
+
+```text
+src/main/resources/application.properties
+```
+
+Update it with your MySQL database credentials:
+
+```properties
+server.port=9091
+
+spring.datasource.url=jdbc:mysql://localhost:3306/online_voting_system?useSSL=false&serverTimezone=UTC
+spring.datasource.username=YOUR_MYSQL_USERNAME
+spring.datasource.password=YOUR_MYSQL_PASSWORD
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+```
+
+---
+
+## 3. Build & Run the Application
+
+Open a terminal in the project's root directory and execute:
+
+```bash
+mvn spring-boot:run
+```
+
+The application will start on **Port 9091**.
+
+Open your browser and visit:
+
+**👉 http://localhost:9091/register**
+
+---
+
+# 📈 Practical Applications & Uses
+
+### 🏫 Educational Institutions
+- Conduct **Student Council Elections**
+- Elect **Class Representatives (CRs)**
+- Organize **College & University Elections**
+
+### 🏢 Corporate Organizations
+- Conduct employee voting for internal initiatives
+- Collect feedback through secure polling
+- Elect employee committee representatives
+
+### 🏘️ Community Associations
+- Organize transparent elections for:
+  - Housing Society Boards
+  - Local Clubs
+  - Resident Welfare Associations (RWAs)
+
+### 🗳️ Local Governance
+- Conduct secure elections for:
+  - Panchayat Elections
+  - Village Committees
+  - Small Civic Bodies
+  - Community Decision-Making
+
+---
+
+## 🚀 Access the Application
+
+Once the server is running, open:
+
+```
+http://localhost:9091/register
+```
+
+to begin registration and use the Online Voting System.
