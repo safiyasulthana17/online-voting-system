@@ -172,3 +172,13 @@ http://localhost:9091/register
 ```
 
 to begin registration and use the Online Voting System.
+
+---
+
+## 👩‍💻 Author
+
+**Shaik Safiya Sulthana**
+
+---
+
+⭐ **If you found this project helpful, consider giving it a Star!**
